@@ -1,0 +1,40 @@
+﻿<Window x:Class="SamplePortsWpf.ValueDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SamplePortsWpf"
+        mc:Ignorable="d"
+        Title="ValueDialog" Height="155" Width="400"
+        x:Name="ValueDialogWindow">
+    <Grid Margin="20">
+        <StackPanel Margin="0,0,0,10">
+            <Label Content="Please enter 1 to 10 to send value to {Binding Port.Name}" HorizontalAlignment="Left" Name="Label" />
+            <TextBox x:Name="TextBox" PreviewTextInput="TextBox_OnPreviewTextInputValidationTextBox">
+                <TextBox.Text>
+                    <Binding RelativeSource="{RelativeSource Self}" Path="Text" UpdateSourceTrigger="LostFocus">
+                        <Binding.ValidationRules>
+                            <local:PortValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <!--
+            <TextBox Height="23" Name="TextBox" PreviewTextInput="TextBox_OnPreviewTextInputValidationTextBox">
+                <TextBox.Text>
+                    <Binding Path="ValueToSend"
+                             Mode="TwoWay"
+                             UpdateSourceTrigger="PropertyChanged"
+                             ValidatesOnNotifyDataErrors="True"
+                             ValidatesOnDataErrors="True"
+                             NotifyOnValidationError="True">
+                        <Binding.ValidationRules>
+                            <local:PortValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>-->
+            <Button Content="Send" Name="Button" Click="Button_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

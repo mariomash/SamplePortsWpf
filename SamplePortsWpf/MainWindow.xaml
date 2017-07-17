@@ -1,0 +1,42 @@
+﻿<Window x:Class="SamplePortsWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SamplePortsWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600" MinWidth="600" MinHeight="350">
+    <Grid Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <ListView Margin="10" Name="LvPorts">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" />
+                    <GridViewColumn Header="Last Received On" DisplayMemberBinding="{Binding LastReceivedDataHumanFormat}" />
+                    <GridViewColumn Header="Last Data Received" DisplayMemberBinding="{Binding ReceivedData}" />
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="TEST" Width="100" Click="Button_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Style.Triggers>
+                                                <DataTrigger  Binding="{Binding Status}" Value="Connected">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger >
+                                                <DataTrigger  Binding="{Binding Status}" Value="Disconnected">
+                                                    <Setter Property="Visibility" Value="Hidden"/>
+                                                </DataTrigger >
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+
+</Window>
