@@ -22,7 +22,7 @@ namespace SamplePortsWpf
     public partial class ValueDialog : Window
     {
         private readonly AsyncPort _port;
-        
+
         public ValueDialog(AsyncPort port)
         {
             _port = port;
@@ -38,10 +38,15 @@ namespace SamplePortsWpf
 
         private void Button_OnClick(object sender, RoutedEventArgs e)
         {
-            _port.SendData(TextBox.Text);
+            var value = TextBox.Text;
+
+            if (new PortValidationRule().Validate(value, CultureInfo.CurrentCulture) != ValidationResult.ValidResult)
+                return;
+
+            _port.SendData(value);
             Close();
         }
-        
+
     }
 
     public class PortValidationRule : ValidationRule
