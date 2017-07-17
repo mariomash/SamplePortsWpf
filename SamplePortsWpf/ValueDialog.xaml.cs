@@ -56,8 +56,10 @@ namespace SamplePortsWpf
             if (string.IsNullOrEmpty(value?.ToString()))
                 return new ValidationResult(false, "value cannot be empty.");
 
-            var intValue = Convert.ToInt32(value.ToString());
-
+            var isNumeric = int.TryParse("123", out int intValue);
+            if (!isNumeric)
+                return new ValidationResult(false, "value should be a number.");
+            
             if (intValue < 0 || intValue > 10)
                 return new ValidationResult(false, "Only 1 to 10 accepted");
 
