@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -79,25 +80,33 @@ namespace SamplePortsWpf
 
         private void ConnectPort()
         {
-            _serialPort.BaudRate = 38400;
-            _serialPort.Handshake = Handshake.None;
-            _serialPort.Parity = Parity.None;
-            _serialPort.DataBits = 8;
-            _serialPort.StopBits = StopBits.One;
-            _serialPort.ReadTimeout = 500;
-            _serialPort.WriteTimeout = 50;
+            try
+            {
+                _serialPort.BaudRate = 38400;
+                _serialPort.Handshake = Handshake.None;
+                _serialPort.Parity = Parity.None;
+                _serialPort.DataBits = 8;
+                _serialPort.StopBits = StopBits.One;
+                _serialPort.ReadTimeout = 500;
+                _serialPort.WriteTimeout = 50;
 
-            // Here we use events, but sometimes it's
-            // not the best (for example using MONO under linux/BSD)
-            _serialPort.DataReceived += ReceivedDataHandler;
+                // Here we use events, but sometimes it's
+                // not the best (for example using MONO under linux/BSD)
+                _serialPort.DataReceived += ReceivedDataHandler;
 
 #if DEBUG
 #else
-            _serialPort.Open();
+                if (!_serialPort.IsOpen)
+                    _serialPort.Open();
 
-            SendData(@"i");
+                SendData(@"i");
 
 #endif
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine($"Couldn't initialize the port: {ex}");
+            }
         }
 
         private void ReceivedDataHandler(object sender, SerialDataReceivedEventArgs e)

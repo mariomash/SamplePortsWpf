@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SamplePortsWpf"
         mc:Ignorable="d"
-        Title="ValueDialog" Height="155" Width="400"
-        x:Name="ValueDialogWindow">
+        Title="ValueDialog" Height="155" Width="400">
     <Grid Margin="20">
         <StackPanel Margin="0,0,0,10">
-            <Label Content="Please enter 1 to 10 to send value to {Binding Port.Name}" HorizontalAlignment="Left" Name="Label" />
+            <Label Content="Please enter 1 to 10 to send value to Port" HorizontalAlignment="Left" Name="Label" />
             <TextBox x:Name="TextBox" PreviewTextInput="TextBox_OnPreviewTextInputValidationTextBox">
                 <TextBox.Text>
                     <Binding RelativeSource="{RelativeSource Self}" Path="Text" UpdateSourceTrigger="LostFocus">

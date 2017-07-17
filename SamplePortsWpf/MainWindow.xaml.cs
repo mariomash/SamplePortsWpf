@@ -32,10 +32,10 @@ namespace SamplePortsWpf
 
             _availablePorts = new ObservableCollection<AsyncPort>();
 
-#if DEBUG
-            var ports = new[] { "COMTEST", "COMTEST2" };
-#else
             var ports = SerialPort.GetPortNames();
+
+#if DEBUG
+            ports = new[] { "COMTEST", "COMTEST2" };
 #endif
 
             foreach (var portName in ports)

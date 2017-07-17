@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SamplePortsWpf
 {
@@ -56,10 +46,10 @@ namespace SamplePortsWpf
             if (string.IsNullOrEmpty(value?.ToString()))
                 return new ValidationResult(false, "value cannot be empty.");
 
-            var isNumeric = int.TryParse("123", out int intValue);
+            var isNumeric = int.TryParse(value.ToString(), out int intValue);
             if (!isNumeric)
                 return new ValidationResult(false, "value should be a number.");
-            
+
             if (intValue < 0 || intValue > 10)
                 return new ValidationResult(false, "Only 1 to 10 accepted");
 
