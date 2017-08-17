@@ -1,0 +1,7 @@
+organization=mariomash-github
+projectKey=SamplePortsWpf
+serverUrl=https://sonarcloud.io
+serverVersion=6.5.0.27571
+dashboardUrl=https://sonarcloud.io/dashboard/index/SamplePortsWpf
+ceTaskId=AV3vlqN7oZyoVyvtk2TQ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AV3vlqN7oZyoVyvtk2TQ

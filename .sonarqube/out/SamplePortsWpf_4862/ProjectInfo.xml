@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>SamplePortsWpf</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>9122a348-e69a-45ee-999a-35b25a04f337</ProjectGuid>
+  <FullPath>D:\Users\mario\source\repos\SamplePortsWpf\SamplePortsWpf\SamplePortsWpf.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\Users\mario\source\repos\SamplePortsWpf\.sonarqube\out\\SamplePortsWpf_4862\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">D:\Users\mario\source\repos\SamplePortsWpf\SamplePortsWpf\bin\Debug\SamplePortsWpf.exe.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">D:\Users\mario\source\repos\SamplePortsWpf\.sonarqube\out\\SamplePortsWpf_4862</Property>
+    <Property Name="sonar.stylecop.projectFilePath">D:\Users\mario\source\repos\SamplePortsWpf\SamplePortsWpf\SamplePortsWpf.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

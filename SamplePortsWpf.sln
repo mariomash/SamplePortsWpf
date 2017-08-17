@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamplePortsWpf", "SamplePortsWpf\SamplePortsWpf.csproj", "{9122A348-E69A-45EE-999A-35B25A04F337}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{620416EA-C336-43EB-B417-43A3ABEC0F3C}"
+	ProjectSection(SolutionItems) = preProject
+		SonarQube\SamplePortsWpfCSharp.ruleset = SonarQube\SamplePortsWpfCSharp.ruleset
+		SonarQube\SolutionBinding.sqconfig = SonarQube\SolutionBinding.sqconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {187D85BF-D0B5-4475-A3F7-8296FF90B310}
 	EndGlobalSection
 EndGlobal
