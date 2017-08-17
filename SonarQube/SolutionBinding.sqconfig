@@ -1,5 +1,5 @@
 {
-  "ServerUri": "https://sonarcloud.io",
+  "ServerUri": "https://sonarcloud.io/",
   "Organization": {
     "key": "mariomash-github",
     "name": "Mario Luanco"

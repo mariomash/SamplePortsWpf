@@ -1,4 +1,4 @@
-ÉÚüŞ+mariomash-githubSamplePortsWpf(:4
+äÏÿıŞ+mariomash-githubSamplePortsWpf(:4
 cpp-
 AV3vOpLyoZyoVyvtk2Rw	Sonar waycpp ĞÌ™ÆØ+:0
 c+
@@ -14,7 +14,7 @@
 plsql/
 AV3vOpLyoZyoVyvtk2Rr	Sonar wayplsql Øñ«à­+:2
 cs,
-AV3vOpLyoZyoVyvtk2Rl	Sonar waycs Øí›ÆØ+:6
+AV3vuHZ8_3TVqy6JD3oE	Mariomashcs ĞÈãıŞ+:6
 java.
 AV3vOpLyoZyoVyvtk2Rs	Sonar wayjava  Ç ÆØ+:8
 cobol/
